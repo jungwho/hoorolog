@@ -8,8 +8,8 @@ interface CircleProps {
 }
 
 const Svg = styled.svg<{ size: number }>`
-  width: calc(${({ size }) => size}px + 0.5vw);
-  height: calc(${({ size }) => size}px + 0.5vw);
+  width: calc(${({ size }) => size}px + 0.25vw);
+  height: calc(${({ size }) => size}px + 0.25vw);
 `;
 
 export const CircleSVG: React.FC<CircleProps> = ({ color, size, style }) => {

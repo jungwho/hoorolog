@@ -1,45 +1,35 @@
 import styled from "@emotion/styled";
+import { useStore } from "../store";
 import { colors } from "../../styles/color";
-import ImgContainer from "./imgContainer";
 import { CircleSVG } from "../../styles/components/svg";
-import { HomeUIProps } from "./types";
+import { HomeUIProps } from "../types";
 import SignContainer from "./signContainer";
+import ImgContainer from "./imgContainer";
+import CommentContainer from "./commentContainer";
+import DescriptionContainer from "./descriptionContainer";
 
 const HomeUI = (props: HomeUIProps) => {
-  const navList = [
-    {
-      name: "hoo",
-      text: "HOO",
-    },
-    {
-      name: "ro",
-      text: "RO",
-    },
-    {
-      name: "log",
-      text: "LOG",
-    },
-  ];
+  const { navList, isHover } = useStore();
   return (
-    <Container isHover={props.isHover}>
+    <Container isHover={isHover}>
       <LeftContainer>
         <SignContainer />
         {navList.map((nav, index) => (
           <>
             <NavItem
-              key={nav.name}
+              key={index}
               hoverColor={colors[nav.name]}
               onClick={() => props.onClickNav(nav.name)}
-              onMouseEnter={() => props.handleMouseEnter(nav.name)}
+              onMouseEnter={() => props.handleMouseEnter(index)}
               onMouseLeave={props.handleMouseLeave}
-              isHover={props.isHover}
+              isHover={isHover}
             >
               {nav.text}
             </NavItem>
             {index < 2 && (
               <CircleSVG
-                size={8}
-                color={props.isHover ? "black" : "white"}
+                size={14}
+                color={isHover ? "black" : "white"}
                 style={{
                   transition: "fill 1s ease-in-out",
                 }}
@@ -47,14 +37,16 @@ const HomeUI = (props: HomeUIProps) => {
             )}
           </>
         ))}
+        <CommentContainer />
       </LeftContainer>
       <RightContainer>
         <HomeImg
           width={175}
           src="/images/home/hoorolog.png"
-          isHover={props.isHover}
+          isHover={isHover}
         />
-        <ImgContainer navName={props.navName} isHover={props.isHover} />
+        <ImgContainer />
+        <DescriptionContainer />
       </RightContainer>
     </Container>
   );

@@ -1,18 +1,17 @@
-import { useState } from "react";
 import { useRouter } from "next/router";
+import { useStore } from "../store";
 import HomeUI from "./homePresenter";
 
 const Home = () => {
   const router = useRouter();
-  const [isHover, setIsHover] = useState<boolean>(false);
-  const [navName, setNavName] = useState<string | null>(null);
+  const { setNavIndex, setIsHover } = useStore();
 
   const onClickNav = (page: string) => {
     router.push(`/${page}`);
   };
-  const handleMouseEnter = (page: string) => {
+  const handleMouseEnter = (index: number) => {
     setIsHover(true);
-    setNavName(page);
+    setNavIndex(index);
   };
 
   const handleMouseLeave = () => {
@@ -24,8 +23,6 @@ const Home = () => {
       onClickNav={onClickNav}
       handleMouseEnter={handleMouseEnter}
       handleMouseLeave={handleMouseLeave}
-      navName={navName}
-      isHover={isHover}
     />
   );
 };

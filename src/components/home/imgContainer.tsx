@@ -1,11 +1,12 @@
-import { ImgProps } from "./types";
 import styled from "@emotion/styled";
+import { useStore } from "../store";
 
-const ImgContainer = (props: ImgProps) => {
+const ImgContainer = () => {
+  const { navList, navIndex, isHover } = useStore();
   return (
     <Container
-      isHover={props.isHover}
-      imgSrc={`/images/home/${props.navName}.png`}
+      isHover={isHover}
+      imgSrc={`/images/home/${navList[navIndex]?.name}.png`}
     />
   );
 };

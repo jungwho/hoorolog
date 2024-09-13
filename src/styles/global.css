@@ -4,6 +4,11 @@
 }
 
 @font-face {
+  font-family: "gsM";
+  src: url("/fonts/GmarketSansTTFMedium.ttf") format("truetype");
+}
+
+@font-face {
   font-family: "gsL";
   src: url("/fonts/GmarketSansTTFLight.ttf") format("truetype");
 }

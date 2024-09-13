@@ -21,7 +21,7 @@ export default SignContainer;
 
 const Container = styled.div`
   position: absolute;
-  top: 39vh;
+  bottom: 57vh;
   right: 9vw;
   display: flex;
 `;
