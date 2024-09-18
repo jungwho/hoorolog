@@ -1,10 +1,15 @@
 import { useRouter } from "next/router";
 import { useStore } from "../store";
+import { useEffect } from "react";
 import HomeUI from "./homePresenter";
 
 const Home = () => {
   const router = useRouter();
   const { setNavIndex, setIsHover } = useStore();
+
+  useEffect(() => {
+    setIsHover(false);
+  }, []);
 
   const onClickNav = (page: string) => {
     router.push(`/${page}`);

@@ -12,7 +12,7 @@ const DescriptionContainer = () => {
     );
   if (navIndex === 1)
     return (
-      <Container color={colors.ro} isHover={isHover}>
+      <Container color={colors.road} isHover={isHover}>
         <p>Explore the Road,</p>
         <p style={{ marginBottom: "80vh" }}>I’ve traveled through life.</p>
       </Container>

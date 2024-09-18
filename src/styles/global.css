@@ -24,11 +24,19 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+@keyframes fading {
+  0% {
+    opacity: 0;
+  }
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
   font-family: "gsB";
+  animation: fading 1s ease-in-out;
+  transition: 0.5s;
 }
 
 a {

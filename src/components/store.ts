@@ -18,7 +18,7 @@ interface StoreState {
 export const useStore = create<StoreState>((set) => ({
   navList: [
     { name: "hoo", text: "HOO", comment: "WHO's HOO?" },
-    { name: "ro", text: "RO", comment: "THE ROAD I’ve TRAVELED." },
+    { name: "road", text: "RO", comment: "THE ROAD I’ve TRAVELED." },
     { name: "log", text: "LOG", comment: "LEAVE A LOG!" },
   ],
 

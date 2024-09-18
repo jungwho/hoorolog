@@ -21,7 +21,7 @@ const Container = styled.div<{ isHover: boolean; imgSrc: string }>`
   transform: ${({ isHover }) =>
     isHover ? "translateX(0)" : "translateX(100%)"};
   opacity: ${({ isHover }) => (isHover ? 1 : 0)};
-  transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+  transition: transform 0.75s ease-in-out, opacity 1s ease-in-out;
   background-size: cover;
   background-position: center;
   background-image: ${({ imgSrc }) => (imgSrc ? `url(${imgSrc})` : "none")};

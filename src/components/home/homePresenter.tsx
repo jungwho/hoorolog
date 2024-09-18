@@ -40,11 +40,7 @@ const HomeUI = (props: HomeUIProps) => {
         <CommentContainer />
       </LeftContainer>
       <RightContainer>
-        <HomeImg
-          width={175}
-          src="/images/home/hoorolog.png"
-          isHover={isHover}
-        />
+        <img width={175} src="/images/home/hoorolog.png" />
         <ImgContainer />
         <DescriptionContainer />
       </RightContainer>
@@ -90,9 +86,4 @@ const RightContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-`;
-
-const HomeImg = styled.img<{ isHover: boolean }>`
-  opacity: ${({ isHover }) => (isHover ? 0 : 1)};
-  transition: opacity 1s ease-in-out;
 `;
