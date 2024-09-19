@@ -51,9 +51,11 @@ const navAnimation = keyframes`
 
 const Container = styled.div`
   width: 100vw;
+  position: absolute;
+  top: 0;
   background-color: black;
   color: white;
-  padding: 10px 20px;
+  padding: 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -61,7 +63,7 @@ const Container = styled.div`
 `;
 
 const Logo = styled.div`
-  font-size: calc(1vw + 10px);
+  font-size: calc(0.7vw + 10px);
   display: flex;
   &:hover {
     cursor: pointer;
