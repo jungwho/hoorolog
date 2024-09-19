@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { useStore } from "../store";
+import { useStore } from "../../store";
 
 const ImgContainer = () => {
   const { navList, navIndex, isHover } = useStore();

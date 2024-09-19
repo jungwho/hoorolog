@@ -3,10 +3,10 @@ import { useStore } from "../store";
 import { colors } from "../../styles/color";
 import { CircleSVG } from "../../styles/components/svg";
 import { HomeUIProps } from "../types";
-import SignContainer from "./signContainer";
-import ImgContainer from "./imgContainer";
-import CommentContainer from "./commentContainer";
-import DescriptionContainer from "./descriptionContainer";
+import SignContainer from "./components/signContainer";
+import ImgContainer from "./components/imgContainer";
+import CommentContainer from "./components/commentContainer";
+import DescriptionContainer from "./components/descriptionContainer";
 
 const HomeUI = (props: HomeUIProps) => {
   const { navList, isHover } = useStore();

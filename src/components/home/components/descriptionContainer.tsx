@@ -1,6 +1,6 @@
-import { useStore } from "../store";
+import { useStore } from "../../store";
 import styled from "@emotion/styled";
-import { colors } from "../../styles/color";
+import { colors } from "../../../styles/color";
 const DescriptionContainer = () => {
   const { isHover, navIndex } = useStore();
   if (navIndex === 0)
