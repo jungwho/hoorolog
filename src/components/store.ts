@@ -13,6 +13,8 @@ interface StoreState {
   setNavIndex: (index: number | null) => void;
   isHover: boolean;
   setIsHover: (hover: boolean) => void;
+  accessTokenState: String;
+  setAccessTokenState: (token: String) => void;
 }
 
 export const useStore = create<StoreState>((set) => ({
@@ -27,4 +29,7 @@ export const useStore = create<StoreState>((set) => ({
 
   isHover: false,
   setIsHover: (hover: boolean) => set({ isHover: hover }),
+
+  accessTokenState: "",
+  setAccessTokenState: (token: String) => set({ accessTokenState: token }),
 }));
