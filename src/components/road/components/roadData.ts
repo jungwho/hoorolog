@@ -19,13 +19,13 @@ export const roadData = [
   },
   {
     name: ":PICK",
-    description: "Deep-Learning + Web Team Project",
+    description: "Deep-Learning + Web Team Project(Design&Front-end)",
     date: "2022.10-2023.06",
     image: "/images/road/road04.mp4",
   },
   {
     name: "ExamGPT",
-    description: "OpenAI + Web Team project",
+    description: "OpenAI + Web Team project(Design&Front-end)",
     date: "2024.04-2024.06",
     image: "/images/road/road05.png",
   },
@@ -37,13 +37,13 @@ export const roadData = [
   },
   {
     name: "Gifty BBang",
-    description: "React-Native Application Team project",
+    description: "React-Native Application Team project(Front-end)",
     date: "2024.05",
     image: "/images/road/road07.png",
   },
   {
     name: "Codiary",
-    description: "React Web Team project",
+    description: "React Web Team project(Front-end)",
     date: "2024.07-2024.08",
     image: "/images/road/road08.png",
   },

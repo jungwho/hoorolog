@@ -95,7 +95,7 @@ const ScrollContainer = styled.div`
 const Drag = styled.div`
   margin: 40px 0;
   color: gray;
-  font-size: calc(0.5vw + 8px);
+  font-size: calc(0.5vw + 10px);
   font-family: gsL;
 `;
 
