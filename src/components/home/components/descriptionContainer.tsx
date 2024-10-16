@@ -1,4 +1,4 @@
-import { useStore } from "../../store";
+import { useStore } from "../../../commons/stores/store";
 import styled from "@emotion/styled";
 import { colors } from "../../../styles/color";
 const DescriptionContainer = () => {

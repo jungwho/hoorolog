@@ -1,8 +1,8 @@
 import styled from "@emotion/styled";
-import { useStore } from "../store";
+import { useStore } from "../../commons/stores/store";
 import { colors } from "../../styles/color";
 import { CircleSVG } from "../../styles/components/svg";
-import { HomeUIProps } from "../types";
+import { HomeUIProps } from "../../commons/types/types";
 import SignContainer from "./components/signContainer";
 import ImgContainer from "./components/imgContainer";
 import CommentContainer from "./components/commentContainer";
@@ -26,15 +26,7 @@ const HomeUI = (props: HomeUIProps) => {
             >
               {nav.text}
             </NavItem>
-            {index < 2 && (
-              <CircleSVG
-                size={14}
-                color={isHover ? "black" : "white"}
-                style={{
-                  transition: "fill 1s ease-in-out",
-                }}
-              />
-            )}
+            {index < 2 && <CircleSVG size={14} color={"white"} />}
           </>
         ))}
         <CommentContainer />
@@ -53,7 +45,6 @@ export default HomeUI;
 const Container = styled.div<{ isHover: boolean }>`
   width: 100vw;
   height: 100vh;
-  background-color: ${({ isHover }) => (isHover ? "white" : "black")};
   transition: background-color 1s ease-in-out;
   display: flex;
 `;
@@ -70,7 +61,6 @@ const LeftContainer = styled.div`
 
 const NavItem = styled.div<{ hoverColor: string; isHover: boolean }>`
   cursor: pointer;
-  color: ${({ isHover }) => (isHover ? "black" : "white")};
   font-size: calc(20px + 3.5vw);
   transition: color 1s ease-in-out;
   margin-top: 10px;

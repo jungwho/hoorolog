@@ -53,8 +53,6 @@ const Container = styled.div`
   width: 100vw;
   position: absolute;
   top: 0;
-  background-color: black;
-  color: white;
   padding: 30px;
   display: flex;
   justify-content: space-between;

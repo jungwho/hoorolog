@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { useStore } from "../../store";
+import { useStore } from "../../../commons/stores/store";
 
 const CommentContainer = () => {
   const { isHover, navList, navIndex } = useStore();

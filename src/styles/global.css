@@ -19,6 +19,8 @@ body {
   ::-webkit-scrollbar {
     display: none;
   }
+  background-color: black;
+  color: white;
 }
 
 body {

@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import { useStore } from "../store";
+import { useStore } from "../../commons/stores/store";
 import { useEffect } from "react";
 import HomeUI from "./homePresenter";
 

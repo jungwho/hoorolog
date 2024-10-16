@@ -1,9 +1,17 @@
 import styled from "@emotion/styled";
-import { useState } from "react";
+import { useStore } from "../../../commons/stores/store";
+import { useRouter } from "next/router";
 
 const SignContainer = () => {
-  const [isSigned, setIsSigned] = useState<boolean>(false);
-  if (isSigned)
+  const { accessToken } = useStore();
+  const router = useRouter();
+  const onClickSignIn = () => {
+    router.push("/sign/signIn");
+  };
+  const onClickSignUp = () => {
+    router.push("/sign/signUp");
+  };
+  if (accessToken)
     return (
       <Container>
         <SignText>SIGN OUT</SignText>
@@ -11,9 +19,9 @@ const SignContainer = () => {
     );
   return (
     <Container>
-      <SignText>SIGN IN</SignText>
+      <SignText onClick={onClickSignIn}>SIGN IN</SignText>
       <SignText>/</SignText>
-      <SignText>SIGN UP</SignText>
+      <SignText onClick={onClickSignUp}>SIGN UP</SignText>
     </Container>
   );
 };
@@ -27,8 +35,11 @@ const Container = styled.div`
 `;
 
 const SignText = styled.div`
-  color: white;
   font-family: "gsL";
   font-size: calc(12px + 1vw);
   margin-left: 15px;
+  &:hover {
+    color: gray;
+    cursor: pointer;
+  }
 `;

@@ -4,7 +4,6 @@ import styled from "@emotion/styled";
 interface CircleProps {
   color: string;
   size: number;
-  style: any;
 }
 
 const Svg = styled.svg<{ size: number }>`
@@ -12,10 +11,10 @@ const Svg = styled.svg<{ size: number }>`
   height: calc(${({ size }) => size}px + 0.25vw);
 `;
 
-export const CircleSVG: React.FC<CircleProps> = ({ color, size, style }) => {
+export const CircleSVG: React.FC<CircleProps> = ({ color, size }) => {
   return (
     <Svg size={size} viewBox="0 0 100 100">
-      <circle cx="50" cy="50" r="40" fill={color} style={style} />
+      <circle cx="50" cy="50" r="40" fill={color} />
     </Svg>
   );
 };

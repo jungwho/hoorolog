@@ -78,7 +78,6 @@ const Container = styled.div`
   padding: 0 10vw;
   align-items: center;
   justify-content: center;
-  background-color: black;
 `;
 
 const ScrollContainer = styled.div`
@@ -86,7 +85,6 @@ const ScrollContainer = styled.div`
   overflow: scroll;
   max-width: 100vw;
   padding: 0 5vw;
-  /* background-color: aliceblue; */
   &::-webkit-scrollbar {
     display: none;
   }
