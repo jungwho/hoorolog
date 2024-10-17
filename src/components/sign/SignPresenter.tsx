@@ -13,7 +13,7 @@ export const SignUI = () => {
         <SignInput />
         <SignText>Password-Check</SignText>
         <SignInput />
-        <SignButton></SignButton>
+        <SignButton>Submit</SignButton>
       </InputForm>
     </Container>
   );
