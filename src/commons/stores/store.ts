@@ -1,6 +1,5 @@
-import create from "zustand";
+import { create } from "zustand";
 
-// home
 interface NavItem {
   name: string;
   text: string;
@@ -30,6 +29,6 @@ export const useStore = create<StoreState>((set) => ({
   isHover: false,
   setIsHover: (hover: boolean) => set({ isHover: hover }),
 
-  accessToken: null,
+  accessToken: "",
   setAccessToken: (token: String) => set({ accessToken: token }),
 }));

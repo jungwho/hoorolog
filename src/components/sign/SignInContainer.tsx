@@ -3,8 +3,8 @@ import { useState } from "react";
 import {
   IMutation,
   IMutationLoginUserArgs,
-} from "../../../src/commons/types/generated/types";
-import { useRouter } from "next/router";
+} from "../../commons/types/generated/types";
+import { useStore } from "../../commons/stores/store";
 
 const LoginUser = gql`
   mutation loginUser($email: String!, $password: String!) {
@@ -15,18 +15,18 @@ const LoginUser = gql`
 `;
 
 export function SignInContainer() {
-  const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const { setAccessToken } = useStore();
   const [loginUserFnc] = useMutation<
     Pick<IMutation, "loginUser">,
     IMutationLoginUserArgs
   >(LoginUser);
 
-  const onChangeEmail = (event) => {
+  const onChangeEmail = (event: any) => {
     setEmail(event.currentTarget.value);
   };
-  const onChangePassword = (event) => {
+  const onChangePassword = (event: any) => {
     setPassword(event.currentTarget.value);
   };
   const onClickLogin = async () => {
@@ -35,7 +35,7 @@ export function SignInContainer() {
       variables: { email, password },
     });
     const accessToken = result.data?.loginUser.accessToken;
-    console.log(accessToken);
+    setAccessToken(accessToken);
 
     //2. 받아온 accessToken을 globalState에 저장하기
     if (accessToken === undefined) {
