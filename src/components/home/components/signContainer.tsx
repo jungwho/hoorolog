@@ -1,20 +1,40 @@
 import styled from "@emotion/styled";
 import { useStore } from "../../../commons/stores/store";
 import { useRouter } from "next/router";
+import { gql, useQuery } from "@apollo/client";
+import { IQuery } from "../../../commons/types/generated/types";
+import { useEffect } from "react";
+
+const FETCH_USER = gql`
+  query {
+    fetchUserLoggedIn {
+      email
+      name
+    }
+  }
+`;
 
 const SignContainer = () => {
-  const { accessToken } = useStore();
+  const { setAccessToken, accessToken } = useStore();
   const router = useRouter();
+
   const onClickSignIn = () => {
     router.push("/sign/signIn");
   };
   const onClickSignUp = () => {
     router.push("/sign/signUp");
   };
+  const onClickSignOut = () => {
+    setAccessToken("");
+    localStorage.setItem("accessToken", "");
+  };
+  const { data } = useQuery<Pick<IQuery, "fetchUserLoggedIn">>(FETCH_USER);
+
   if (accessToken)
     return (
       <Container>
-        <SignText>SIGN OUT</SignText>
+        <Name>{data?.fetchUserLoggedIn.name}</Name>
+        <SignText onClick={onClickSignOut}>SIGN OUT</SignText>
       </Container>
     );
   return (
@@ -36,10 +56,15 @@ const Container = styled.div`
 
 const SignText = styled.div`
   font-family: "gsL";
-  font-size: calc(12px + 1vw);
+  font-size: calc(8px + 1vw);
   margin-left: 15px;
   &:hover {
     color: gray;
     cursor: pointer;
   }
+`;
+
+const Name = styled.div`
+  font-family: "gsL";
+  font-size: calc(8px + 1vw);
 `;

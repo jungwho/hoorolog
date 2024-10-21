@@ -5,6 +5,7 @@ import {
   IMutationLoginUserArgs,
 } from "../../commons/types/generated/types";
 import { useStore } from "../../commons/stores/store";
+import { useRouter } from "next/router";
 
 const LoginUser = gql`
   mutation loginUser($email: String!, $password: String!) {
@@ -23,6 +24,7 @@ export function SignInContainer() {
     IMutationLoginUserArgs
   >(LoginUser);
 
+  const router = useRouter();
   const onChangeEmail = (event: any) => {
     setEmail(event.currentTarget.value);
   };
@@ -34,10 +36,13 @@ export function SignInContainer() {
     const result = await loginUserFnc({
       variables: { email, password },
     });
-    const accessToken = result.data?.loginUser.accessToken;
-    setAccessToken(accessToken);
 
     //2. 받아온 accessToken을 globalState에 저장하기
+    const accessToken = result.data?.loginUser.accessToken;
+    setAccessToken(accessToken);
+    localStorage.setItem("accessToken", accessToken);
+    router.push("/");
+
     if (accessToken === undefined) {
       alert("로그인에 실패했습니다.");
       return;
