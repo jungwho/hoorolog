@@ -15,17 +15,21 @@ interface IApolloSettingProps {
 
 export default function ApolloSetting(props: IApolloSettingProps) {
   const { accessToken, setAccessToken } = useStore();
+
   useEffect(() => {
     const localAccessToken = localStorage.getItem("accessToken");
     setAccessToken(localAccessToken ?? "");
   }, []);
   const uploadLink = createUploadLink({
     uri: "http://backend-practice.codebootcamp.co.kr/graphql",
-    headers: { Authorization: `Bearer ${accessToken}` },
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+    },
   });
   const client = new ApolloClient({
     link: ApolloLink.from([uploadLink]),
     cache: globalState,
   });
+
   return <ApolloProvider client={client}>{props.children}</ApolloProvider>;
 }

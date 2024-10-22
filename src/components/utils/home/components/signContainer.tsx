@@ -3,7 +3,6 @@ import { useStore } from "../../../commons/stores/store";
 import { useRouter } from "next/router";
 import { gql, useQuery } from "@apollo/client";
 import { IQuery } from "../../../commons/types/generated/types";
-import { useEffect } from "react";
 
 const FETCH_USER = gql`
   query {
@@ -17,7 +16,7 @@ const FETCH_USER = gql`
 const SignContainer = () => {
   const { setAccessToken, accessToken } = useStore();
   const router = useRouter();
-
+  const { data } = useQuery<Pick<IQuery, "fetchUserLoggedIn">>(FETCH_USER);
   const onClickSignIn = () => {
     router.push("/sign/signIn");
   };
@@ -28,7 +27,6 @@ const SignContainer = () => {
     setAccessToken("");
     localStorage.setItem("accessToken", "");
   };
-  const { data } = useQuery<Pick<IQuery, "fetchUserLoggedIn">>(FETCH_USER);
 
   if (accessToken)
     return (

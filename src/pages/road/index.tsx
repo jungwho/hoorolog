@@ -1,5 +1,5 @@
 import NavContainer from "../../components/nav";
-import Road from "../../components/road/roadContainer";
+import Road from "../../components/utils/road/roadContainer";
 
 const RoadPage = () => {
   return (

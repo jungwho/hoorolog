@@ -1,5 +1,5 @@
-import { loginCheck } from "../../commons/hocs/loginCheck";
-import LogContainer from "../../components/log/logContainer";
+import { loginCheck } from "../../components/commons/hocs/loginCheck";
+import LogContainer from "../../components/utils/log/logContainer";
 
 const LogPage = () => {
   return <LogContainer />;

@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { useStore } from "../../commons/stores/store";
-import { colors } from "../../styles/color";
-import { CircleSVG } from "../../styles/components/svg";
+import { colors } from "../../../styles/color";
+import { CircleSVG } from "../../../styles/components/svg";
 import { HomeUIProps } from "../../commons/types/types";
 import SignContainer from "./components/signContainer";
 import ImgContainer from "./components/imgContainer";

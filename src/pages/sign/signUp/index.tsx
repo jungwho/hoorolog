@@ -1,4 +1,4 @@
-import { SignUpContainer } from "../../../components/sign/SignUpContainer";
+import { SignUpContainer } from "../../../components/utils/sign/SignUpContainer";
 
 const SignUpPage = () => {
   return <SignUpContainer />;

@@ -1,4 +1,4 @@
-import { SignInContainer } from "../../../components/sign/SignInContainer";
+import { SignInContainer } from "../../../components/utils/sign/SignInContainer";
 
 const SignInPage = () => {
   return <SignInContainer />;
